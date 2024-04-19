@@ -8,13 +8,13 @@ class Program
 		// Create a ServiceHost for the AstroServer
 		using (ServiceHost host = new ServiceHost(typeof(AstroServer)))
 		{
-			// Define the binding (NetNamedPipeBinding in this case)
+			// Define the binding
 			NetNamedPipeBinding binding = new NetNamedPipeBinding();
 
-			// Add an endpoint for the service
+			// Add an endpoint
 			host.AddServiceEndpoint(typeof(IAstroContract), binding, "net.pipe://localhost/AstroService");
 
-			// Open the service host
+			// open the service host
 			host.Open();
 
 			Console.WriteLine("The AstroService is running...");
