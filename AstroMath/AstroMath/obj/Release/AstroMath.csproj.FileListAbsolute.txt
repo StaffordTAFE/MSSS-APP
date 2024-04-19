@@ -4,3 +4,9 @@ C:\Users\benja\Documents\TAFE SEM2\Advanced Data Structures\Assesment Task Proje
 C:\Users\benja\Documents\TAFE SEM2\Advanced Data Structures\Assesment Task Projects\AT2 (MSSS Astronomical Processing )\AstroMath\AstroMath\obj\Release\AstroMath.csproj.CoreCompileInputs.cache
 C:\Users\benja\Documents\TAFE SEM2\Advanced Data Structures\Assesment Task Projects\AT2 (MSSS Astronomical Processing )\AstroMath\AstroMath\obj\Release\AstroMath.dll
 C:\Users\benja\Documents\TAFE SEM2\Advanced Data Structures\Assesment Task Projects\AT2 (MSSS Astronomical Processing )\AstroMath\AstroMath\obj\Release\AstroMath.pdb
+C:\Users\benja\Documents\TAFE SEM2\Advanced Data Structures\Assesment Task Projects\AT2 (MSSS Astronomical Processing)\AstroMath\AstroMath\bin\Release\AstroMath.dll
+C:\Users\benja\Documents\TAFE SEM2\Advanced Data Structures\Assesment Task Projects\AT2 (MSSS Astronomical Processing)\AstroMath\AstroMath\bin\Release\AstroMath.pdb
+C:\Users\benja\Documents\TAFE SEM2\Advanced Data Structures\Assesment Task Projects\AT2 (MSSS Astronomical Processing)\AstroMath\AstroMath\obj\Release\AstroMath.csproj.AssemblyReference.cache
+C:\Users\benja\Documents\TAFE SEM2\Advanced Data Structures\Assesment Task Projects\AT2 (MSSS Astronomical Processing)\AstroMath\AstroMath\obj\Release\AstroMath.csproj.CoreCompileInputs.cache
+C:\Users\benja\Documents\TAFE SEM2\Advanced Data Structures\Assesment Task Projects\AT2 (MSSS Astronomical Processing)\AstroMath\AstroMath\obj\Release\AstroMath.dll
+C:\Users\benja\Documents\TAFE SEM2\Advanced Data Structures\Assesment Task Projects\AT2 (MSSS Astronomical Processing)\AstroMath\AstroMath\obj\Release\AstroMath.pdb
