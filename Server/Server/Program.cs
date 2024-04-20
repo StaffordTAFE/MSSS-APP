@@ -14,6 +14,7 @@ class Program
 			// Add an endpoint
 			host.AddServiceEndpoint(typeof(IAstroContract), binding, "net.pipe://localhost/AstroService");
 
+
 			// open the service host
 			host.Open();
 

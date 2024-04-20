@@ -1,0 +1,9 @@
+C:\Users\benja\Documents\TAFE SEM2\Advanced Data Structures\Assesment Task Projects\AT2 (MSSS-APP)\MSSS-APP\Server\Server\bin\Debug\Server.exe.config
+C:\Users\benja\Documents\TAFE SEM2\Advanced Data Structures\Assesment Task Projects\AT2 (MSSS-APP)\MSSS-APP\Server\Server\bin\Debug\Server.exe
+C:\Users\benja\Documents\TAFE SEM2\Advanced Data Structures\Assesment Task Projects\AT2 (MSSS-APP)\MSSS-APP\Server\Server\bin\Debug\Server.pdb
+C:\Users\benja\Documents\TAFE SEM2\Advanced Data Structures\Assesment Task Projects\AT2 (MSSS-APP)\MSSS-APP\Server\Server\bin\Debug\AstroMath.dll
+C:\Users\benja\Documents\TAFE SEM2\Advanced Data Structures\Assesment Task Projects\AT2 (MSSS-APP)\MSSS-APP\Server\Server\obj\Debug\Server.csproj.AssemblyReference.cache
+C:\Users\benja\Documents\TAFE SEM2\Advanced Data Structures\Assesment Task Projects\AT2 (MSSS-APP)\MSSS-APP\Server\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+C:\Users\benja\Documents\TAFE SEM2\Advanced Data Structures\Assesment Task Projects\AT2 (MSSS-APP)\MSSS-APP\Server\Server\obj\Debug\Server.csproj.CopyComplete
+C:\Users\benja\Documents\TAFE SEM2\Advanced Data Structures\Assesment Task Projects\AT2 (MSSS-APP)\MSSS-APP\Server\Server\obj\Debug\Server.exe
+C:\Users\benja\Documents\TAFE SEM2\Advanced Data Structures\Assesment Task Projects\AT2 (MSSS-APP)\MSSS-APP\Server\Server\obj\Debug\Server.pdb

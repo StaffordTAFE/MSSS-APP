@@ -14,6 +14,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MSSS_Astronomical_Processing
-build_property.ProjectDir = C:\Users\benja\Documents\TAFE SEM2\Advanced Data Structures\Assesment Task Projects\AT2 (MSSS Astronomical Processing )\MSSS-Astronomical-Processing\MSSS-Astronomical-Processing\
+build_property.ProjectDir = C:\Users\benja\Documents\TAFE SEM2\Advanced Data Structures\Assesment Task Projects\AT2 (MSSS-APP)\MSSS-APP\Client\MSSS-Astronomical-Processing\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

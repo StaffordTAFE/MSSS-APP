@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\benja\\Documents\\TAFE SEM2\\Advanced Data Structures\\Assesment Task Projects\\AT2 (MSSS Astronomical Processing )\\MSSS-Astronomical-Processing\\MSSS-Astronomical-Processing\\MSSS-Astronomical-Processing.csproj": {}
+    "C:\\Users\\benja\\Documents\\TAFE SEM2\\Advanced Data Structures\\Assesment Task Projects\\AT2 (MSSS-APP)\\MSSS-APP\\Client\\MSSS-Astronomical-Processing\\MSSS-Astronomical-Processing.csproj": {}
   },
   "projects": {
-    "C:\\Users\\benja\\Documents\\TAFE SEM2\\Advanced Data Structures\\Assesment Task Projects\\AT2 (MSSS Astronomical Processing )\\MSSS-Astronomical-Processing\\MSSS-Astronomical-Processing\\MSSS-Astronomical-Processing.csproj": {
+    "C:\\Users\\benja\\Documents\\TAFE SEM2\\Advanced Data Structures\\Assesment Task Projects\\AT2 (MSSS-APP)\\MSSS-APP\\Client\\MSSS-Astronomical-Processing\\MSSS-Astronomical-Processing.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\benja\\Documents\\TAFE SEM2\\Advanced Data Structures\\Assesment Task Projects\\AT2 (MSSS Astronomical Processing )\\MSSS-Astronomical-Processing\\MSSS-Astronomical-Processing\\MSSS-Astronomical-Processing.csproj",
+        "projectUniqueName": "C:\\Users\\benja\\Documents\\TAFE SEM2\\Advanced Data Structures\\Assesment Task Projects\\AT2 (MSSS-APP)\\MSSS-APP\\Client\\MSSS-Astronomical-Processing\\MSSS-Astronomical-Processing.csproj",
         "projectName": "MSSS-Astronomical-Processing",
-        "projectPath": "C:\\Users\\benja\\Documents\\TAFE SEM2\\Advanced Data Structures\\Assesment Task Projects\\AT2 (MSSS Astronomical Processing )\\MSSS-Astronomical-Processing\\MSSS-Astronomical-Processing\\MSSS-Astronomical-Processing.csproj",
+        "projectPath": "C:\\Users\\benja\\Documents\\TAFE SEM2\\Advanced Data Structures\\Assesment Task Projects\\AT2 (MSSS-APP)\\MSSS-APP\\Client\\MSSS-Astronomical-Processing\\MSSS-Astronomical-Processing.csproj",
         "packagesPath": "C:\\Users\\benja\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\benja\\Documents\\TAFE SEM2\\Advanced Data Structures\\Assesment Task Projects\\AT2 (MSSS Astronomical Processing )\\MSSS-Astronomical-Processing\\MSSS-Astronomical-Processing\\obj\\",
+        "outputPath": "C:\\Users\\benja\\Documents\\TAFE SEM2\\Advanced Data Structures\\Assesment Task Projects\\AT2 (MSSS-APP)\\MSSS-APP\\Client\\MSSS-Astronomical-Processing\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\benja\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,12 @@
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "System.ServiceModel.Primitives": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
