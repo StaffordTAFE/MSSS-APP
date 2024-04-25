@@ -30,18 +30,14 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
 			this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-			this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-			this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.label1 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.textBox2 = new System.Windows.Forms.TextBox();
-			this.label2 = new System.Windows.Forms.Label();
-			this.button1 = new System.Windows.Forms.Button();
+			this.starVelocityResults = new System.Windows.Forms.ListView();
 			this.label3 = new System.Windows.Forms.Label();
-			this.listView1 = new System.Windows.Forms.ListView();
+			this.calcStarVelocity = new System.Windows.Forms.Button();
+			this.restWavelength = new System.Windows.Forms.TextBox();
+			this.label2 = new System.Windows.Forms.Label();
+			this.observedWavelength = new System.Windows.Forms.TextBox();
+			this.label1 = new System.Windows.Forms.Label();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.listView2 = new System.Windows.Forms.ListView();
 			this.label4 = new System.Windows.Forms.Label();
@@ -63,12 +59,16 @@
 			this.label11 = new System.Windows.Forms.Label();
 			this.textBox5 = new System.Windows.Forms.TextBox();
 			this.label12 = new System.Windows.Forms.Label();
+			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+			this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+			this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
 			this.flowLayoutPanel1.SuspendLayout();
-			this.toolStrip1.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.groupBox3.SuspendLayout();
 			this.groupBox4.SuspendLayout();
+			this.toolStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// flowLayoutPanel1
@@ -85,47 +85,14 @@
 			this.flowLayoutPanel1.Size = new System.Drawing.Size(1165, 700);
 			this.flowLayoutPanel1.TabIndex = 0;
 			// 
-			// toolStrip1
-			// 
-			this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-			this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripLabel1,
-            this.toolStripSeparator1,
-            this.toolStripDropDownButton1});
-			this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-			this.toolStrip1.Name = "toolStrip1";
-			this.toolStrip1.Size = new System.Drawing.Size(1165, 38);
-			this.toolStrip1.TabIndex = 1;
-			this.toolStrip1.Text = "toolStrip1";
-			// 
-			// toolStripLabel1
-			// 
-			this.toolStripLabel1.Name = "toolStripLabel1";
-			this.toolStripLabel1.Size = new System.Drawing.Size(258, 33);
-			this.toolStripLabel1.Text = "MSSS Astronomical Processing";
-			// 
-			// toolStripSeparator1
-			// 
-			this.toolStripSeparator1.Name = "toolStripSeparator1";
-			this.toolStripSeparator1.Size = new System.Drawing.Size(6, 38);
-			// 
-			// toolStripDropDownButton1
-			// 
-			this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-			this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
-			this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-			this.toolStripDropDownButton1.Size = new System.Drawing.Size(120, 33);
-			this.toolStripDropDownButton1.Text = "Preferences";
-			// 
 			// groupBox1
 			// 
-			this.groupBox1.Controls.Add(this.listView1);
+			this.groupBox1.Controls.Add(this.starVelocityResults);
 			this.groupBox1.Controls.Add(this.label3);
-			this.groupBox1.Controls.Add(this.button1);
-			this.groupBox1.Controls.Add(this.textBox2);
+			this.groupBox1.Controls.Add(this.calcStarVelocity);
+			this.groupBox1.Controls.Add(this.restWavelength);
 			this.groupBox1.Controls.Add(this.label2);
-			this.groupBox1.Controls.Add(this.textBox1);
+			this.groupBox1.Controls.Add(this.observedWavelength);
 			this.groupBox1.Controls.Add(this.label1);
 			this.groupBox1.Location = new System.Drawing.Point(3, 3);
 			this.groupBox1.Name = "groupBox1";
@@ -134,47 +101,14 @@
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Star Velocity";
 			// 
-			// label1
+			// starVelocityResults
 			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(9, 22);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(228, 20);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "Observed Wavelength (Metres)";
-			// 
-			// textBox1
-			// 
-			this.textBox1.Location = new System.Drawing.Point(9, 45);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(268, 26);
-			this.textBox1.TabIndex = 1;
-			// 
-			// textBox2
-			// 
-			this.textBox2.Location = new System.Drawing.Point(9, 97);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(268, 26);
-			this.textBox2.TabIndex = 3;
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(9, 74);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(194, 20);
-			this.label2.TabIndex = 2;
-			this.label2.Text = "Rest Wavelength (Metres)";
-			// 
-			// button1
-			// 
-			this.button1.Location = new System.Drawing.Point(9, 129);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(268, 30);
-			this.button1.TabIndex = 4;
-			this.button1.Text = "Calculate";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
+			this.starVelocityResults.HideSelection = false;
+			this.starVelocityResults.Location = new System.Drawing.Point(13, 185);
+			this.starVelocityResults.Name = "starVelocityResults";
+			this.starVelocityResults.Size = new System.Drawing.Size(264, 497);
+			this.starVelocityResults.TabIndex = 6;
+			this.starVelocityResults.UseCompatibleStateImageBehavior = false;
 			// 
 			// label3
 			// 
@@ -185,14 +119,47 @@
 			this.label3.TabIndex = 5;
 			this.label3.Text = "Calculation Results (Metres/Second)";
 			// 
-			// listView1
+			// calcStarVelocity
 			// 
-			this.listView1.HideSelection = false;
-			this.listView1.Location = new System.Drawing.Point(13, 185);
-			this.listView1.Name = "listView1";
-			this.listView1.Size = new System.Drawing.Size(264, 497);
-			this.listView1.TabIndex = 6;
-			this.listView1.UseCompatibleStateImageBehavior = false;
+			this.calcStarVelocity.Location = new System.Drawing.Point(9, 129);
+			this.calcStarVelocity.Name = "calcStarVelocity";
+			this.calcStarVelocity.Size = new System.Drawing.Size(268, 30);
+			this.calcStarVelocity.TabIndex = 4;
+			this.calcStarVelocity.Text = "Calculate";
+			this.calcStarVelocity.UseVisualStyleBackColor = true;
+			this.calcStarVelocity.Click += new System.EventHandler(this.calcStarVelocity_Click);
+			// 
+			// restWavelength
+			// 
+			this.restWavelength.Location = new System.Drawing.Point(9, 97);
+			this.restWavelength.Name = "restWavelength";
+			this.restWavelength.Size = new System.Drawing.Size(268, 26);
+			this.restWavelength.TabIndex = 3;
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(9, 74);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(194, 20);
+			this.label2.TabIndex = 2;
+			this.label2.Text = "Rest Wavelength (Metres)";
+			// 
+			// observedWavelength
+			// 
+			this.observedWavelength.Location = new System.Drawing.Point(9, 45);
+			this.observedWavelength.Name = "observedWavelength";
+			this.observedWavelength.Size = new System.Drawing.Size(268, 26);
+			this.observedWavelength.TabIndex = 1;
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(9, 22);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(228, 20);
+			this.label1.TabIndex = 0;
+			this.label1.Text = "Observed Wavelength (Metres)";
 			// 
 			// groupBox2
 			// 
@@ -392,6 +359,39 @@
 			this.label12.TabIndex = 0;
 			this.label12.Text = "Black Hole Mass (Kilograms)";
 			// 
+			// toolStrip1
+			// 
+			this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+			this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel1,
+            this.toolStripSeparator1,
+            this.toolStripDropDownButton1});
+			this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+			this.toolStrip1.Name = "toolStrip1";
+			this.toolStrip1.Size = new System.Drawing.Size(1165, 34);
+			this.toolStrip1.TabIndex = 1;
+			this.toolStrip1.Text = "toolStrip1";
+			// 
+			// toolStripLabel1
+			// 
+			this.toolStripLabel1.Name = "toolStripLabel1";
+			this.toolStripLabel1.Size = new System.Drawing.Size(258, 29);
+			this.toolStripLabel1.Text = "MSSS Astronomical Processing";
+			// 
+			// toolStripSeparator1
+			// 
+			this.toolStripSeparator1.Name = "toolStripSeparator1";
+			this.toolStripSeparator1.Size = new System.Drawing.Size(6, 34);
+			// 
+			// toolStripDropDownButton1
+			// 
+			this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+			this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+			this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+			this.toolStripDropDownButton1.Size = new System.Drawing.Size(120, 29);
+			this.toolStripDropDownButton1.Text = "Preferences";
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -404,8 +404,6 @@
 			this.ShowIcon = false;
 			this.Text = "MSSS Astronomical Processing Client";
 			this.flowLayoutPanel1.ResumeLayout(false);
-			this.toolStrip1.ResumeLayout(false);
-			this.toolStrip1.PerformLayout();
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
 			this.groupBox2.ResumeLayout(false);
@@ -414,6 +412,8 @@
 			this.groupBox3.PerformLayout();
 			this.groupBox4.ResumeLayout(false);
 			this.groupBox4.PerformLayout();
+			this.toolStrip1.ResumeLayout(false);
+			this.toolStrip1.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -428,11 +428,11 @@
 		private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.TextBox textBox1;
-		private System.Windows.Forms.TextBox textBox2;
+		private System.Windows.Forms.TextBox observedWavelength;
+		private System.Windows.Forms.TextBox restWavelength;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.ListView listView1;
+		private System.Windows.Forms.Button calcStarVelocity;
+		private System.Windows.Forms.ListView starVelocityResults;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.GroupBox groupBox2;
 		private System.Windows.Forms.ListView listView2;
