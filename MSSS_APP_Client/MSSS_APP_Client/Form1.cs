@@ -35,11 +35,43 @@ namespace MSSS_APP_Client
 
 		private void calcStarVelocity_Click(object sender, EventArgs e)
 		{
-			ListViewItem lvi = new ListViewItem();
+			double starVelocity = pipeProxy.CalculateStarVelocity(int.Parse(observedWavelength.Text), int.Parse(restWavelength.Text));
 
-			lvi.Text = pipeProxy.CalculateStarVelocity(int.Parse(observedWavelength.Text), int.Parse(restWavelength.Text)).ToString();
+			ListViewItem lvi = new ListViewItem();
+			lvi.Text = DateTime.Now.ToString("HH:mm:ss");
+			lvi.SubItems.Add(starVelocity.ToString("0.000E+0"));
 
 			starVelocityResults.Items.Add(lvi);
+		}
+
+		private void calcStarDistance_Click(object sender, EventArgs e)
+		{
+			double starDistance = pipeProxy.CalculateStarDistance(double.Parse(arcsecondsAngle.Text));
+
+			ListViewItem lvi = new ListViewItem();
+			lvi.Text = DateTime.Now.ToString("HH:mm:ss");
+			lvi.SubItems.Add(starDistance.ToString("0.000E+0"));
+			starDistanceResults.Items.Insert(0, lvi);
+		}
+
+		private void convertToKelvin_Click(object sender, EventArgs e)
+		{
+			double kelvinTemperature = pipeProxy.ConvertToKelvin(double.Parse(celsiusTemperature.Text));
+
+			ListViewItem lvi = new ListViewItem();
+			lvi.Text = DateTime.Now.ToString("HH:mm:ss");
+			lvi.SubItems.Add(kelvinTemperature.ToString("0.000E+0"));
+			celsiusToKelvinResults.Items.Insert(0, lvi);
+		}
+
+		private void calcSchwarzschildRadius_Click(object sender, EventArgs e)
+		{
+			double schwarzschildRadius = pipeProxy.CalculateSchwarzschildRadius(double.Parse(blackHoleMass.Text));
+
+			ListViewItem lvi = new ListViewItem();
+			lvi.Text = DateTime.Now.ToString("HH:mm:ss");
+			lvi.SubItems.Add(schwarzschildRadius.ToString("0.000E+0"));
+			schwarzchildRadiusResults.Items.Insert(0, lvi);
 		}
 	}
 }
