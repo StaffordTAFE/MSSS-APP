@@ -71,6 +71,11 @@
 			this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+			this.appearanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.darkModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.lightModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.customBackgroundColourToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.fontSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.flowLayoutPanel1.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
@@ -88,10 +93,9 @@
 			this.flowLayoutPanel1.Controls.Add(this.groupBox2);
 			this.flowLayoutPanel1.Controls.Add(this.groupBox3);
 			this.flowLayoutPanel1.Controls.Add(this.groupBox4);
-			this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 24);
-			this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
+			this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 37);
 			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-			this.flowLayoutPanel1.Size = new System.Drawing.Size(777, 451);
+			this.flowLayoutPanel1.Size = new System.Drawing.Size(1166, 694);
 			this.flowLayoutPanel1.TabIndex = 0;
 			// 
 			// groupBox1
@@ -103,11 +107,9 @@
 			this.groupBox1.Controls.Add(this.label2);
 			this.groupBox1.Controls.Add(this.observedWavelength);
 			this.groupBox1.Controls.Add(this.label1);
-			this.groupBox1.Location = new System.Drawing.Point(2, 2);
-			this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+			this.groupBox1.Location = new System.Drawing.Point(3, 3);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-			this.groupBox1.Size = new System.Drawing.Size(189, 447);
+			this.groupBox1.Size = new System.Drawing.Size(284, 688);
 			this.groupBox1.TabIndex = 0;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Star Velocity";
@@ -119,10 +121,9 @@
             this.Result});
 			this.starVelocityResults.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
 			this.starVelocityResults.HideSelection = false;
-			this.starVelocityResults.Location = new System.Drawing.Point(9, 120);
-			this.starVelocityResults.Margin = new System.Windows.Forms.Padding(2);
+			this.starVelocityResults.Location = new System.Drawing.Point(9, 185);
 			this.starVelocityResults.Name = "starVelocityResults";
-			this.starVelocityResults.Size = new System.Drawing.Size(177, 324);
+			this.starVelocityResults.Size = new System.Drawing.Size(266, 496);
 			this.starVelocityResults.TabIndex = 6;
 			this.starVelocityResults.UseCompatibleStateImageBehavior = false;
 			this.starVelocityResults.View = System.Windows.Forms.View.Details;
@@ -140,57 +141,57 @@
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(6, 105);
-			this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.label3.Location = new System.Drawing.Point(9, 162);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(180, 13);
+			this.label3.Size = new System.Drawing.Size(267, 20);
 			this.label3.TabIndex = 5;
 			this.label3.Text = "Calculation Results (Metres/Second)";
 			// 
 			// calcStarVelocity
 			// 
-			this.calcStarVelocity.Location = new System.Drawing.Point(6, 84);
-			this.calcStarVelocity.Margin = new System.Windows.Forms.Padding(2);
+			this.calcStarVelocity.BackColor = System.Drawing.SystemColors.Control;
+			this.calcStarVelocity.FlatStyle = System.Windows.Forms.FlatStyle.System;
+			this.calcStarVelocity.Location = new System.Drawing.Point(9, 129);
 			this.calcStarVelocity.Name = "calcStarVelocity";
-			this.calcStarVelocity.Size = new System.Drawing.Size(179, 20);
+			this.calcStarVelocity.Size = new System.Drawing.Size(268, 31);
 			this.calcStarVelocity.TabIndex = 4;
 			this.calcStarVelocity.Text = "Calculate";
-			this.calcStarVelocity.UseVisualStyleBackColor = true;
+			this.calcStarVelocity.UseVisualStyleBackColor = false;
 			this.calcStarVelocity.Click += new System.EventHandler(this.calcStarVelocity_Click);
 			// 
 			// restWavelength
 			// 
-			this.restWavelength.Location = new System.Drawing.Point(6, 63);
-			this.restWavelength.Margin = new System.Windows.Forms.Padding(2);
+			this.restWavelength.BackColor = System.Drawing.SystemColors.Window;
+			this.restWavelength.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.restWavelength.Location = new System.Drawing.Point(9, 97);
 			this.restWavelength.Name = "restWavelength";
-			this.restWavelength.Size = new System.Drawing.Size(180, 20);
+			this.restWavelength.Size = new System.Drawing.Size(268, 26);
 			this.restWavelength.TabIndex = 3;
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(6, 48);
-			this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.label2.Location = new System.Drawing.Point(9, 74);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(156, 13);
+			this.label2.Size = new System.Drawing.Size(232, 20);
 			this.label2.TabIndex = 2;
 			this.label2.Text = "Rest Wavelength (Nanometres)";
 			// 
 			// observedWavelength
 			// 
-			this.observedWavelength.Location = new System.Drawing.Point(6, 29);
-			this.observedWavelength.Margin = new System.Windows.Forms.Padding(2);
+			this.observedWavelength.BackColor = System.Drawing.SystemColors.Window;
+			this.observedWavelength.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.observedWavelength.Location = new System.Drawing.Point(9, 45);
 			this.observedWavelength.Name = "observedWavelength";
-			this.observedWavelength.Size = new System.Drawing.Size(180, 20);
+			this.observedWavelength.Size = new System.Drawing.Size(268, 26);
 			this.observedWavelength.TabIndex = 1;
 			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(6, 14);
-			this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.label1.Location = new System.Drawing.Point(9, 22);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(180, 13);
+			this.label1.Size = new System.Drawing.Size(266, 20);
 			this.label1.TabIndex = 0;
 			this.label1.Text = "Observed Wavelength (Nanometres)";
 			// 
@@ -202,11 +203,9 @@
 			this.groupBox2.Controls.Add(this.label5);
 			this.groupBox2.Controls.Add(this.arcsecondsAngle);
 			this.groupBox2.Controls.Add(this.label6);
-			this.groupBox2.Location = new System.Drawing.Point(195, 2);
-			this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
+			this.groupBox2.Location = new System.Drawing.Point(293, 3);
 			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-			this.groupBox2.Size = new System.Drawing.Size(189, 447);
+			this.groupBox2.Size = new System.Drawing.Size(284, 688);
 			this.groupBox2.TabIndex = 7;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Star Distance";
@@ -218,10 +217,9 @@
             this.columnHeader2});
 			this.starDistanceResults.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
 			this.starDistanceResults.HideSelection = false;
-			this.starDistanceResults.Location = new System.Drawing.Point(6, 87);
-			this.starDistanceResults.Margin = new System.Windows.Forms.Padding(2);
+			this.starDistanceResults.Location = new System.Drawing.Point(9, 134);
 			this.starDistanceResults.Name = "starDistanceResults";
-			this.starDistanceResults.Size = new System.Drawing.Size(177, 357);
+			this.starDistanceResults.Size = new System.Drawing.Size(268, 547);
 			this.starDistanceResults.TabIndex = 7;
 			this.starDistanceResults.UseCompatibleStateImageBehavior = false;
 			this.starDistanceResults.View = System.Windows.Forms.View.Details;
@@ -239,48 +237,47 @@
 			// label4
 			// 
 			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(6, 72);
-			this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.label4.Location = new System.Drawing.Point(9, 111);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(144, 13);
+			this.label4.Size = new System.Drawing.Size(216, 20);
 			this.label4.TabIndex = 5;
 			this.label4.Text = "Calculation Results (Parsecs)";
 			// 
 			// calcStarDistance
 			// 
-			this.calcStarDistance.Location = new System.Drawing.Point(6, 50);
-			this.calcStarDistance.Margin = new System.Windows.Forms.Padding(2);
+			this.calcStarDistance.BackColor = System.Drawing.SystemColors.Control;
+			this.calcStarDistance.FlatStyle = System.Windows.Forms.FlatStyle.System;
+			this.calcStarDistance.Location = new System.Drawing.Point(9, 77);
 			this.calcStarDistance.Name = "calcStarDistance";
-			this.calcStarDistance.Size = new System.Drawing.Size(179, 20);
+			this.calcStarDistance.Size = new System.Drawing.Size(268, 31);
 			this.calcStarDistance.TabIndex = 4;
 			this.calcStarDistance.Text = "Calculate";
-			this.calcStarDistance.UseVisualStyleBackColor = true;
+			this.calcStarDistance.UseVisualStyleBackColor = false;
 			this.calcStarDistance.Click += new System.EventHandler(this.calcStarDistance_Click);
 			// 
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(6, 48);
-			this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.label5.Location = new System.Drawing.Point(9, 74);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(0, 13);
+			this.label5.Size = new System.Drawing.Size(0, 20);
 			this.label5.TabIndex = 2;
 			// 
 			// arcsecondsAngle
 			// 
-			this.arcsecondsAngle.Location = new System.Drawing.Point(6, 29);
-			this.arcsecondsAngle.Margin = new System.Windows.Forms.Padding(2);
+			this.arcsecondsAngle.BackColor = System.Drawing.SystemColors.Window;
+			this.arcsecondsAngle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.arcsecondsAngle.Location = new System.Drawing.Point(9, 45);
 			this.arcsecondsAngle.Name = "arcsecondsAngle";
-			this.arcsecondsAngle.Size = new System.Drawing.Size(180, 20);
+			this.arcsecondsAngle.Size = new System.Drawing.Size(268, 26);
 			this.arcsecondsAngle.TabIndex = 1;
 			// 
 			// label6
 			// 
 			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(6, 14);
-			this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.label6.Location = new System.Drawing.Point(9, 22);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(158, 13);
+			this.label6.Size = new System.Drawing.Size(236, 20);
 			this.label6.TabIndex = 0;
 			this.label6.Text = "Arcseconds Angle (Arcseconds)";
 			// 
@@ -292,11 +289,9 @@
 			this.groupBox3.Controls.Add(this.label8);
 			this.groupBox3.Controls.Add(this.celsiusTemperature);
 			this.groupBox3.Controls.Add(this.label9);
-			this.groupBox3.Location = new System.Drawing.Point(388, 2);
-			this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
+			this.groupBox3.Location = new System.Drawing.Point(583, 3);
 			this.groupBox3.Name = "groupBox3";
-			this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-			this.groupBox3.Size = new System.Drawing.Size(189, 447);
+			this.groupBox3.Size = new System.Drawing.Size(284, 688);
 			this.groupBox3.TabIndex = 8;
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "Celsius to Kelvin";
@@ -308,10 +303,9 @@
             this.columnHeader4});
 			this.celsiusToKelvinResults.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
 			this.celsiusToKelvinResults.HideSelection = false;
-			this.celsiusToKelvinResults.Location = new System.Drawing.Point(0, 87);
-			this.celsiusToKelvinResults.Margin = new System.Windows.Forms.Padding(2);
+			this.celsiusToKelvinResults.Location = new System.Drawing.Point(9, 134);
 			this.celsiusToKelvinResults.Name = "celsiusToKelvinResults";
-			this.celsiusToKelvinResults.Size = new System.Drawing.Size(177, 357);
+			this.celsiusToKelvinResults.Size = new System.Drawing.Size(268, 547);
 			this.celsiusToKelvinResults.TabIndex = 8;
 			this.celsiusToKelvinResults.UseCompatibleStateImageBehavior = false;
 			this.celsiusToKelvinResults.View = System.Windows.Forms.View.Details;
@@ -329,48 +323,47 @@
 			// label7
 			// 
 			this.label7.AutoSize = true;
-			this.label7.Location = new System.Drawing.Point(6, 72);
-			this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.label7.Location = new System.Drawing.Point(9, 111);
 			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(135, 13);
+			this.label7.Size = new System.Drawing.Size(200, 20);
 			this.label7.TabIndex = 5;
 			this.label7.Text = "Calculation Results (Kelvin)";
 			// 
 			// convertToKelvin
 			// 
-			this.convertToKelvin.Location = new System.Drawing.Point(6, 50);
-			this.convertToKelvin.Margin = new System.Windows.Forms.Padding(2);
+			this.convertToKelvin.BackColor = System.Drawing.SystemColors.Control;
+			this.convertToKelvin.FlatStyle = System.Windows.Forms.FlatStyle.System;
+			this.convertToKelvin.Location = new System.Drawing.Point(9, 77);
 			this.convertToKelvin.Name = "convertToKelvin";
-			this.convertToKelvin.Size = new System.Drawing.Size(179, 20);
+			this.convertToKelvin.Size = new System.Drawing.Size(268, 31);
 			this.convertToKelvin.TabIndex = 4;
 			this.convertToKelvin.Text = "Calculate";
-			this.convertToKelvin.UseVisualStyleBackColor = true;
+			this.convertToKelvin.UseVisualStyleBackColor = false;
 			this.convertToKelvin.Click += new System.EventHandler(this.convertToKelvin_Click);
 			// 
 			// label8
 			// 
 			this.label8.AutoSize = true;
-			this.label8.Location = new System.Drawing.Point(6, 48);
-			this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.label8.Location = new System.Drawing.Point(9, 74);
 			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(0, 13);
+			this.label8.Size = new System.Drawing.Size(0, 20);
 			this.label8.TabIndex = 2;
 			// 
 			// celsiusTemperature
 			// 
-			this.celsiusTemperature.Location = new System.Drawing.Point(6, 29);
-			this.celsiusTemperature.Margin = new System.Windows.Forms.Padding(2);
+			this.celsiusTemperature.BackColor = System.Drawing.SystemColors.Window;
+			this.celsiusTemperature.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.celsiusTemperature.Location = new System.Drawing.Point(9, 45);
 			this.celsiusTemperature.Name = "celsiusTemperature";
-			this.celsiusTemperature.Size = new System.Drawing.Size(180, 20);
+			this.celsiusTemperature.Size = new System.Drawing.Size(268, 26);
 			this.celsiusTemperature.TabIndex = 1;
 			// 
 			// label9
 			// 
 			this.label9.AutoSize = true;
-			this.label9.Location = new System.Drawing.Point(6, 14);
-			this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.label9.Location = new System.Drawing.Point(9, 22);
 			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(109, 13);
+			this.label9.Size = new System.Drawing.Size(165, 20);
 			this.label9.TabIndex = 0;
 			this.label9.Text = "Temperature (Celsius)";
 			// 
@@ -382,11 +375,9 @@
 			this.groupBox4.Controls.Add(this.label11);
 			this.groupBox4.Controls.Add(this.blackHoleMass);
 			this.groupBox4.Controls.Add(this.label12);
-			this.groupBox4.Location = new System.Drawing.Point(581, 2);
-			this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
+			this.groupBox4.Location = new System.Drawing.Point(873, 3);
 			this.groupBox4.Name = "groupBox4";
-			this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
-			this.groupBox4.Size = new System.Drawing.Size(189, 447);
+			this.groupBox4.Size = new System.Drawing.Size(284, 688);
 			this.groupBox4.TabIndex = 8;
 			this.groupBox4.TabStop = false;
 			this.groupBox4.Text = "Schwarzschild Radius ";
@@ -398,10 +389,9 @@
             this.columnHeader6});
 			this.schwarzchildRadiusResults.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
 			this.schwarzchildRadiusResults.HideSelection = false;
-			this.schwarzchildRadiusResults.Location = new System.Drawing.Point(6, 87);
-			this.schwarzchildRadiusResults.Margin = new System.Windows.Forms.Padding(2);
+			this.schwarzchildRadiusResults.Location = new System.Drawing.Point(9, 134);
 			this.schwarzchildRadiusResults.Name = "schwarzchildRadiusResults";
-			this.schwarzchildRadiusResults.Size = new System.Drawing.Size(177, 357);
+			this.schwarzchildRadiusResults.Size = new System.Drawing.Size(268, 547);
 			this.schwarzchildRadiusResults.TabIndex = 9;
 			this.schwarzchildRadiusResults.UseCompatibleStateImageBehavior = false;
 			this.schwarzchildRadiusResults.View = System.Windows.Forms.View.Details;
@@ -419,48 +409,47 @@
 			// label10
 			// 
 			this.label10.AutoSize = true;
-			this.label10.Location = new System.Drawing.Point(6, 72);
-			this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.label10.Location = new System.Drawing.Point(9, 111);
 			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(138, 13);
+			this.label10.Size = new System.Drawing.Size(208, 20);
 			this.label10.TabIndex = 5;
 			this.label10.Text = "Calculation Results (Metres)";
 			// 
 			// calcSchwarzschildRadius
 			// 
-			this.calcSchwarzschildRadius.Location = new System.Drawing.Point(6, 50);
-			this.calcSchwarzschildRadius.Margin = new System.Windows.Forms.Padding(2);
+			this.calcSchwarzschildRadius.BackColor = System.Drawing.SystemColors.Control;
+			this.calcSchwarzschildRadius.FlatStyle = System.Windows.Forms.FlatStyle.System;
+			this.calcSchwarzschildRadius.Location = new System.Drawing.Point(9, 77);
 			this.calcSchwarzschildRadius.Name = "calcSchwarzschildRadius";
-			this.calcSchwarzschildRadius.Size = new System.Drawing.Size(179, 20);
+			this.calcSchwarzschildRadius.Size = new System.Drawing.Size(268, 31);
 			this.calcSchwarzschildRadius.TabIndex = 4;
 			this.calcSchwarzschildRadius.Text = "Calculate";
-			this.calcSchwarzschildRadius.UseVisualStyleBackColor = true;
+			this.calcSchwarzschildRadius.UseVisualStyleBackColor = false;
 			this.calcSchwarzschildRadius.Click += new System.EventHandler(this.calcSchwarzschildRadius_Click);
 			// 
 			// label11
 			// 
 			this.label11.AutoSize = true;
-			this.label11.Location = new System.Drawing.Point(6, 48);
-			this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.label11.Location = new System.Drawing.Point(9, 74);
 			this.label11.Name = "label11";
-			this.label11.Size = new System.Drawing.Size(0, 13);
+			this.label11.Size = new System.Drawing.Size(0, 20);
 			this.label11.TabIndex = 2;
 			// 
 			// blackHoleMass
 			// 
-			this.blackHoleMass.Location = new System.Drawing.Point(6, 29);
-			this.blackHoleMass.Margin = new System.Windows.Forms.Padding(2);
+			this.blackHoleMass.BackColor = System.Drawing.SystemColors.Window;
+			this.blackHoleMass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.blackHoleMass.Location = new System.Drawing.Point(9, 45);
 			this.blackHoleMass.Name = "blackHoleMass";
-			this.blackHoleMass.Size = new System.Drawing.Size(180, 20);
+			this.blackHoleMass.Size = new System.Drawing.Size(268, 26);
 			this.blackHoleMass.TabIndex = 1;
 			// 
 			// label12
 			// 
 			this.label12.AutoSize = true;
-			this.label12.Location = new System.Drawing.Point(6, 14);
-			this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.label12.Location = new System.Drawing.Point(9, 22);
 			this.label12.Name = "label12";
-			this.label12.Size = new System.Drawing.Size(141, 13);
+			this.label12.Size = new System.Drawing.Size(210, 20);
 			this.label12.TabIndex = 0;
 			this.label12.Text = "Black Hole Mass (Kilograms)";
 			// 
@@ -473,39 +462,81 @@
             this.toolStripDropDownButton1});
 			this.toolStrip1.Location = new System.Drawing.Point(0, 0);
 			this.toolStrip1.Name = "toolStrip1";
-			this.toolStrip1.Size = new System.Drawing.Size(777, 25);
+			this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
+			this.toolStrip1.Size = new System.Drawing.Size(1166, 34);
 			this.toolStrip1.TabIndex = 1;
 			this.toolStrip1.Text = "toolStrip1";
 			// 
 			// toolStripLabel1
 			// 
 			this.toolStripLabel1.Name = "toolStripLabel1";
-			this.toolStripLabel1.Size = new System.Drawing.Size(170, 22);
+			this.toolStripLabel1.Size = new System.Drawing.Size(258, 29);
 			this.toolStripLabel1.Text = "MSSS Astronomical Processing";
 			// 
 			// toolStripSeparator1
 			// 
 			this.toolStripSeparator1.Name = "toolStripSeparator1";
-			this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+			this.toolStripSeparator1.Size = new System.Drawing.Size(6, 34);
 			// 
 			// toolStripDropDownButton1
 			// 
 			this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+			this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.appearanceToolStripMenuItem});
 			this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
 			this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-			this.toolStripDropDownButton1.Size = new System.Drawing.Size(81, 22);
+			this.toolStripDropDownButton1.Size = new System.Drawing.Size(120, 29);
 			this.toolStripDropDownButton1.Text = "Preferences";
+			// 
+			// appearanceToolStripMenuItem
+			// 
+			this.appearanceToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.darkModeToolStripMenuItem,
+            this.lightModeToolStripMenuItem,
+            this.customBackgroundColourToolStripMenuItem,
+            this.fontSettingsToolStripMenuItem});
+			this.appearanceToolStripMenuItem.Name = "appearanceToolStripMenuItem";
+			this.appearanceToolStripMenuItem.Size = new System.Drawing.Size(208, 34);
+			this.appearanceToolStripMenuItem.Text = "Appearance";
+			// 
+			// darkModeToolStripMenuItem
+			// 
+			this.darkModeToolStripMenuItem.Name = "darkModeToolStripMenuItem";
+			this.darkModeToolStripMenuItem.Size = new System.Drawing.Size(334, 34);
+			this.darkModeToolStripMenuItem.Text = "Dark Mode";
+			this.darkModeToolStripMenuItem.Click += new System.EventHandler(this.darkModeToolStripMenuItem_Click);
+			// 
+			// lightModeToolStripMenuItem
+			// 
+			this.lightModeToolStripMenuItem.Name = "lightModeToolStripMenuItem";
+			this.lightModeToolStripMenuItem.Size = new System.Drawing.Size(334, 34);
+			this.lightModeToolStripMenuItem.Text = "Light Mode";
+			this.lightModeToolStripMenuItem.Click += new System.EventHandler(this.lightModeToolStripMenuItem_Click);
+			// 
+			// customBackgroundColourToolStripMenuItem
+			// 
+			this.customBackgroundColourToolStripMenuItem.Name = "customBackgroundColourToolStripMenuItem";
+			this.customBackgroundColourToolStripMenuItem.Size = new System.Drawing.Size(334, 34);
+			this.customBackgroundColourToolStripMenuItem.Text = "Custom Background Colour";
+			this.customBackgroundColourToolStripMenuItem.Click += new System.EventHandler(this.customBackgroundColourToolStripMenuItem_Click);
+			// 
+			// fontSettingsToolStripMenuItem
+			// 
+			this.fontSettingsToolStripMenuItem.Name = "fontSettingsToolStripMenuItem";
+			this.fontSettingsToolStripMenuItem.Size = new System.Drawing.Size(334, 34);
+			this.fontSettingsToolStripMenuItem.Text = "Font Settings";
 			// 
 			// Form1
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(777, 477);
+			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.ClientSize = new System.Drawing.Size(1166, 734);
 			this.Controls.Add(this.toolStrip1);
 			this.Controls.Add(this.flowLayoutPanel1);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-			this.Margin = new System.Windows.Forms.Padding(2);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.MaximizeBox = false;
 			this.Name = "Form1";
 			this.ShowIcon = false;
 			this.Text = "MSSS Astronomical Processing Client";
@@ -569,6 +600,11 @@
 		private System.Windows.Forms.ListView schwarzchildRadiusResults;
 		private System.Windows.Forms.ColumnHeader columnHeader5;
 		private System.Windows.Forms.ColumnHeader columnHeader6;
+		private System.Windows.Forms.ToolStripMenuItem appearanceToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem darkModeToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem lightModeToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem customBackgroundColourToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem fontSettingsToolStripMenuItem;
 	}
 }
 
