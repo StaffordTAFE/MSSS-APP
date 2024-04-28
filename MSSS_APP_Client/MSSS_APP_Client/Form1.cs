@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -38,43 +39,72 @@ namespace MSSS_APP_Client
 		#region Calculation Events
 		private void calcStarVelocity_Click(object sender, EventArgs e)
 		{
-			double starVelocity = pipeProxy.CalculateStarVelocity(double.Parse(observedWavelength.Text), double.Parse(restWavelength.Text));
+			if (double.TryParse(observedWavelength.Text, out double observedWavelengthValue) &&
+				double.TryParse(restWavelength.Text, out double restWavelengthValue))
+			{
+				double starVelocity = pipeProxy.CalculateStarVelocity(observedWavelengthValue, restWavelengthValue);
 
-			ListViewItem lvi = new ListViewItem();
-			lvi.Text = DateTime.Now.ToString("HH:mm:ss");
-			lvi.SubItems.Add(starVelocity.ToString("0.000E+0"));
+				ListViewItem lvi = new ListViewItem();
+				lvi.Text = DateTime.Now.ToString("HH:mm:ss");
+				lvi.SubItems.Add(starVelocity.ToString("0.000E+0"));
 
-			starVelocityResults.Items.Add(lvi);
+				starVelocityResults.Items.Add(lvi);
+			}
+			else
+			{
+				MessageBox.Show("Invalid input for observed wavelength or rest wavelength. Input must be of type double or valid scientific notation.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 		}
 
 		private void calcStarDistance_Click(object sender, EventArgs e)
 		{
-			double starDistance = pipeProxy.CalculateStarDistance(double.Parse(arcsecondsAngle.Text));
+			if (double.TryParse(arcsecondsAngle.Text, out double arcsecondsAngleValue))
+			{
+				double starDistance = pipeProxy.CalculateStarDistance(arcsecondsAngleValue);
 
-			ListViewItem lvi = new ListViewItem();
-			lvi.Text = DateTime.Now.ToString("HH:mm:ss");
-			lvi.SubItems.Add(starDistance.ToString("0.000E+0"));
-			starDistanceResults.Items.Insert(0, lvi);
+				ListViewItem lvi = new ListViewItem();
+				lvi.Text = DateTime.Now.ToString("HH:mm:ss");
+				lvi.SubItems.Add(starDistance.ToString("0.000E+0"));
+				starDistanceResults.Items.Insert(0, lvi);
+			}
+			else
+			{
+				MessageBox.Show("Invalid input for arcseconds angle. Input must be of type double or valid scientific notation.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 		}
 
 		private void convertToKelvin_Click(object sender, EventArgs e)
 		{
-			double kelvinTemperature = pipeProxy.ConvertToKelvin(double.Parse(celsiusTemperature.Text));
+			if (double.TryParse(celsiusTemperature.Text, out double celsiusTemperatureValue))
+			{
+				double kelvinTemperature = pipeProxy.ConvertToKelvin(celsiusTemperatureValue);
 
-			ListViewItem lvi = new ListViewItem();
-			lvi.Text = DateTime.Now.ToString("HH:mm:ss");
-			lvi.SubItems.Add(kelvinTemperature.ToString("0.000E+0"));
-			celsiusToKelvinResults.Items.Insert(0, lvi);
+				ListViewItem lvi = new ListViewItem();
+				lvi.Text = DateTime.Now.ToString("HH:mm:ss");
+				lvi.SubItems.Add(kelvinTemperature.ToString("0.000E+0"));
+				celsiusToKelvinResults.Items.Insert(0, lvi);
+			}
+			else
+			{
+				MessageBox.Show("Invalid input for Celsius temperature. Input must be of type double or valid scientific notation.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 		}
 
 		private void calcSchwarzschildRadius_Click(object sender, EventArgs e)
 		{
-			double schwarzschildRadius = pipeProxy.CalculateSchwarzschildRadius(double.Parse(blackHoleMass.Text));
+			if (double.TryParse(blackHoleMass.Text, out double blackHoleMassValue))
+			{
+				double schwarzschildRadius = pipeProxy.CalculateSchwarzschildRadius(blackHoleMassValue);
 
-			ListViewItem lvi = new ListViewItem();
-			lvi.Text = DateTime.Now.ToString("HH:mm:ss");
-			lvi.SubItems.Add(schwarzschildRadius.ToString("0.000E+0"));
-			schwarzchildRadiusResults.Items.Insert(0, lvi);
+				ListViewItem lvi = new ListViewItem();
+				lvi.Text = DateTime.Now.ToString("HH:mm:ss");
+				lvi.SubItems.Add(schwarzschildRadius.ToString("0.000E+0"));
+				schwarzchildRadiusResults.Items.Insert(0, lvi);
+			}
+			else
+			{
+				MessageBox.Show("Invalid input for black hole mass. Input must be of type double or valid scientific notation.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 		}
 		#endregion
 
@@ -106,7 +136,8 @@ namespace MSSS_APP_Client
 				control.BackColor = darkDarkBackground;
 				control.ForeColor = lightForeground;
 			}
-			else {
+			else
+			{
 				control.BackColor = darkBackground;
 				control.ForeColor = lightForeground;
 			}
@@ -136,7 +167,50 @@ namespace MSSS_APP_Client
 			}
 		}
 
+		private void fontSettingsToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			FontDialog dialog = new FontDialog();
 
+			if (dialog.ShowDialog() == DialogResult.OK)
+			{
+				fontSettings(this, dialog.Font);
+			}
+		}
+
+		private void fontSettings(Control control, Font font)
+		{
+			control.Font = font;
+
+			foreach (Control childControl in control.Controls)
+			{
+				fontSettings(childControl, font);
+			}
+		}
+		#endregion
+
+		#region Language
+		private void englishToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en");
+			Controls.Clear();
+			InitializeComponent();
+
+		}
+
+		private void frenchToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("fr");
+			Controls.Clear();
+			InitializeComponent();
+
+		}
+
+		private void germanToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("de");
+			Controls.Clear();
+			InitializeComponent();
+		}
 		#endregion
 	}
 }

@@ -1,0 +1,10 @@
+C:\Users\benja\Documents\TAFE SEM2\Advanced Data Structures\Assesment Task Projects\AT2 (MSSS-APP)\MSSS-APP\MSSS_APP_Client\MSSS_APP_Client\bin\Release\MSSS_APP_Client.exe.config
+C:\Users\benja\Documents\TAFE SEM2\Advanced Data Structures\Assesment Task Projects\AT2 (MSSS-APP)\MSSS-APP\MSSS_APP_Client\MSSS_APP_Client\bin\Release\MSSS_APP_Client.exe
+C:\Users\benja\Documents\TAFE SEM2\Advanced Data Structures\Assesment Task Projects\AT2 (MSSS-APP)\MSSS-APP\MSSS_APP_Client\MSSS_APP_Client\bin\Release\MSSS_APP_Client.pdb
+C:\Users\benja\Documents\TAFE SEM2\Advanced Data Structures\Assesment Task Projects\AT2 (MSSS-APP)\MSSS-APP\MSSS_APP_Client\MSSS_APP_Client\obj\Release\MSSS_APP_Client.csproj.AssemblyReference.cache
+C:\Users\benja\Documents\TAFE SEM2\Advanced Data Structures\Assesment Task Projects\AT2 (MSSS-APP)\MSSS-APP\MSSS_APP_Client\MSSS_APP_Client\obj\Release\MSSS_APP_Client.Form1.resources
+C:\Users\benja\Documents\TAFE SEM2\Advanced Data Structures\Assesment Task Projects\AT2 (MSSS-APP)\MSSS-APP\MSSS_APP_Client\MSSS_APP_Client\obj\Release\MSSS_APP_Client.Properties.Resources.resources
+C:\Users\benja\Documents\TAFE SEM2\Advanced Data Structures\Assesment Task Projects\AT2 (MSSS-APP)\MSSS-APP\MSSS_APP_Client\MSSS_APP_Client\obj\Release\MSSS_APP_Client.csproj.GenerateResource.cache
+C:\Users\benja\Documents\TAFE SEM2\Advanced Data Structures\Assesment Task Projects\AT2 (MSSS-APP)\MSSS-APP\MSSS_APP_Client\MSSS_APP_Client\obj\Release\MSSS_APP_Client.csproj.CoreCompileInputs.cache
+C:\Users\benja\Documents\TAFE SEM2\Advanced Data Structures\Assesment Task Projects\AT2 (MSSS-APP)\MSSS-APP\MSSS_APP_Client\MSSS_APP_Client\obj\Release\MSSS_APP_Client.exe
+C:\Users\benja\Documents\TAFE SEM2\Advanced Data Structures\Assesment Task Projects\AT2 (MSSS-APP)\MSSS-APP\MSSS_APP_Client\MSSS_APP_Client\obj\Release\MSSS_APP_Client.pdb
