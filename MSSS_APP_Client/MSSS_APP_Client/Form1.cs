@@ -86,7 +86,7 @@ namespace MSSS_APP_Client
 			}
 			else
 			{
-				MessageBox.Show("Invalid input for Celsius temperature. Input must be of type double or valid scientific notation.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("Invalid input for temperature. Input must be of type double or valid scientific notation.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
 
