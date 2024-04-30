@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace MSSS_APP_Client
 {
@@ -33,78 +34,75 @@ namespace MSSS_APP_Client
 			new NetNamedPipeBinding(),
 			new EndpointAddress("net.pipe://localhost/AstroService"));
 			pipeProxy = pipeFactory.CreateChannel();
+
+			results.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
 		}
 		#endregion
 
 		#region Calculation Events
-		private void calcStarVelocity_Click(object sender, EventArgs e)
+		private void calculate_Click(object sender, EventArgs e)
 		{
-			if (double.TryParse(observedWavelength.Text, out double observedWavelengthValue) &&
-				double.TryParse(restWavelength.Text, out double restWavelengthValue))
+			if ((string.IsNullOrEmpty(observedWavelength.Text) || string.IsNullOrEmpty(restWavelength.Text)) &&
+				string.IsNullOrEmpty(arcsecondsAngle.Text) &&
+				(string.IsNullOrEmpty(celsiusTemperature.Text) || celsiusTemperature.Text == "-") &&
+				(string.IsNullOrEmpty(blackHoleMassA.Text) || string.IsNullOrEmpty(blackHoleMassB.Text))
+				)
 			{
-				double starVelocity = pipeProxy.CalculateStarVelocity(observedWavelengthValue, restWavelengthValue);
+				return;
+			}
 
-				ListViewItem lvi = new ListViewItem();
-				lvi.Text = DateTime.Now.ToString("HH:mm:ss");
-				lvi.SubItems.Add(starVelocity.ToString("0.000E+0"));
+			string time = DateTime.Now.ToString("HH:mm:ss"); ;
+			string velocity;
+			string distance;
+			string temperature;
+			string radius;
 
-				starVelocityResults.Items.Add(lvi);
+			if (!string.IsNullOrEmpty(observedWavelength.Text) && !string.IsNullOrEmpty(restWavelength.Text))
+			{
+				double velocityValue = pipeProxy.CalculateStarVelocity(double.Parse(observedWavelength.Text), double.Parse(restWavelength.Text));
+				velocity = velocityValue.ToString("0.###E+0") + " m/s";
 			}
 			else
 			{
-				MessageBox.Show("Invalid input for observed wavelength or rest wavelength. Input must be of type double or valid scientific notation.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				velocity = string.Empty;
 			}
-		}
 
-		private void calcStarDistance_Click(object sender, EventArgs e)
-		{
-			if (double.TryParse(arcsecondsAngle.Text, out double arcsecondsAngleValue))
+			if (!string.IsNullOrEmpty(arcsecondsAngle.Text))
 			{
-				double starDistance = pipeProxy.CalculateStarDistance(arcsecondsAngleValue);
-
-				ListViewItem lvi = new ListViewItem();
-				lvi.Text = DateTime.Now.ToString("HH:mm:ss");
-				lvi.SubItems.Add(starDistance.ToString("0.000E+0"));
-				starDistanceResults.Items.Insert(0, lvi);
+				double distanceValue = pipeProxy.CalculateStarDistance(double.Parse(arcsecondsAngle.Text));
+				distance = distanceValue.ToString("0.###E+0") + " pc";
 			}
 			else
 			{
-				MessageBox.Show("Invalid input for arcseconds angle. Input must be of type double or valid scientific notation.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				distance = string.Empty;
 			}
-		}
 
-		private void convertToKelvin_Click(object sender, EventArgs e)
-		{
-			if (double.TryParse(celsiusTemperature.Text, out double celsiusTemperatureValue))
+			if (!string.IsNullOrEmpty(celsiusTemperature.Text) && celsiusTemperature.Text != "-")
 			{
-				double kelvinTemperature = pipeProxy.ConvertToKelvin(celsiusTemperatureValue);
-
-				ListViewItem lvi = new ListViewItem();
-				lvi.Text = DateTime.Now.ToString("HH:mm:ss");
-				lvi.SubItems.Add(kelvinTemperature.ToString("0.000E+0"));
-				celsiusToKelvinResults.Items.Insert(0, lvi);
+				double temperatureValue = pipeProxy.ConvertToKelvin(double.Parse(celsiusTemperature.Text));
+				temperature = temperatureValue.ToString("0.###E+0") + " K";
 			}
 			else
 			{
-				MessageBox.Show("Invalid input for temperature. Input must be of type double or valid scientific notation.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				temperature = string.Empty;
 			}
-		}
 
-		private void calcSchwarzschildRadius_Click(object sender, EventArgs e)
-		{
-			if (double.TryParse(blackHoleMass.Text, out double blackHoleMassValue))
+			if (!string.IsNullOrEmpty(blackHoleMassA.Text) && !string.IsNullOrEmpty(blackHoleMassB.Text))
 			{
-				double schwarzschildRadius = pipeProxy.CalculateSchwarzschildRadius(blackHoleMassValue);
-
-				ListViewItem lvi = new ListViewItem();
-				lvi.Text = DateTime.Now.ToString("HH:mm:ss");
-				lvi.SubItems.Add(schwarzschildRadius.ToString("0.000E+0"));
-				schwarzchildRadiusResults.Items.Insert(0, lvi);
+				double blackHoleMass = double.Parse(blackHoleMassA.Text + "e" + blackHoleMassB.Text);
+				double radiusValue = pipeProxy.CalculateSchwarzschildRadius(blackHoleMass);
+				radius = radiusValue.ToString("0.###E+0") + " m";
 			}
 			else
 			{
-				MessageBox.Show("Invalid input for black hole mass. Input must be of type double or valid scientific notation.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				radius = string.Empty;
 			}
+
+			ListViewItem lvi = new ListViewItem(new[] { time, velocity, distance, temperature, radius });
+			results.Items.Add(lvi);
+			results.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+			results.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+
 		}
 		#endregion
 
@@ -211,6 +209,86 @@ namespace MSSS_APP_Client
 			Controls.Clear();
 			InitializeComponent();
 		}
+
 		#endregion
+
+
+		private void observedWavelength_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.') && (e.KeyChar != '-'))
+			{
+				e.Handled = true;
+			}
+
+			if ((e.KeyChar == '.') && ((sender as System.Windows.Forms.TextBox).Text.IndexOf('.') > -1))
+			{
+				e.Handled = true;
+			}
+		}
+
+		private void restWavelength_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.') && (e.KeyChar != '-'))
+			{
+				e.Handled = true;
+			}
+
+			if ((e.KeyChar == '.') && ((sender as System.Windows.Forms.TextBox).Text.IndexOf('.') > -1))
+			{
+				e.Handled = true;
+			}
+		}
+
+		private void arcsecondsAngle_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+			{
+				e.Handled = true;
+			}
+
+			if ((e.KeyChar == '.') && ((sender as System.Windows.Forms.TextBox).Text.IndexOf('.') > -1))
+			{
+				e.Handled = true;
+			}
+		}
+
+		private void celsiusTemperature_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.') && (e.KeyChar != '-'))
+			{
+				e.Handled = true;
+			}
+
+			if ((e.KeyChar == '.') && ((sender as System.Windows.Forms.TextBox).Text.IndexOf('.') > -1))
+			{
+				e.Handled = true;
+			}
+
+			if ((e.KeyChar == '-') && ((sender as System.Windows.Forms.TextBox).SelectionStart != 0))
+			{
+				e.Handled = true;
+			}
+		}
+
+		private void blackHoleMassA_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+			{
+				e.Handled = true;
+			}
+
+			if ((e.KeyChar == '.') && ((sender as System.Windows.Forms.TextBox).Text.IndexOf('.') > -1))
+			{
+				e.Handled = true;
+			}
+		}
+
+		private void blackHoleMassB_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+			{
+				e.Handled = true;
+			}
+		}
 	}
 }
