@@ -192,7 +192,7 @@ namespace MSSS_APP_Client
 			Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en");
 			Controls.Clear();
 			InitializeComponent();
-
+			results.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
 		}
 
 		private void frenchToolStripMenuItem_Click(object sender, EventArgs e)
@@ -200,7 +200,7 @@ namespace MSSS_APP_Client
 			Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("fr");
 			Controls.Clear();
 			InitializeComponent();
-
+			results.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
 		}
 
 		private void germanToolStripMenuItem_Click(object sender, EventArgs e)
@@ -208,11 +208,12 @@ namespace MSSS_APP_Client
 			Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("de");
 			Controls.Clear();
 			InitializeComponent();
+			results.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
 		}
 
 		#endregion
 
-
+		#region error handling
 		private void observedWavelength_KeyPress(object sender, KeyPressEventArgs e)
 		{
 			if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.') && (e.KeyChar != '-'))
@@ -290,5 +291,6 @@ namespace MSSS_APP_Client
 				e.Handled = true;
 			}
 		}
+		#endregion
 	}
 }
